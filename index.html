@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+		<title>Home</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div class="page">
+		<div class="header">
+			<h1 style="text-align:center; color: red; font-size: 60px; font-style: italic;background-color:white;">Cool cars I've spotted in Japan</h1>
+			<ul>
+				<li class="selected">
+					<a href="index.html">Home</a> 
+				</li>
+				<li>
+					<a href="about.html">About</a> 
+				</li>
+				<li>
+					<a href="news.html">Car meets</a> 
+				</li>
+				<li>
+					<a href="contact.html">Gallery</a>
+				</li>
+			</ul>
+		</div>
+		<div class="body">
+			
+		<div class="carfinder">
+			<div class="welcome">
+				<h2 id="welcome"></h2>
+				<br><a href="https://freewebsitetemplates.com/preview/carracingwebtemplate/index.html">click here for the original template (https://freewebsitetemplates.com/preview/carracingwebtemplate/index.html)</a></h2>
+				
+				<h4>These are my css additions</h4>
+				<p>
+				As a HUGE Car guy, I would like to share some of the cars I've spotted in many places around Japan ranging from classic cars all the way to Flashy Modern cars.<br>Hope you enjoy it.				
+				</p>
+			</div>
+			<h2>Your dream JDM car for your budget (This is my JavaScript)</h2>
+			<p><strong>Enter your budget in million Yen</strong></p>
+			<select id="budget">
+					<option value="low">Under ￥３ million</option>
+					<option value="mid">￥３ - ￥8 million</option>
+					<option value="high">Over ￥8 million</option>
+				</select>
+				<br><br>
+				<p><strong>Enter your driving style</strong></p>
+				<select id="style">
+					<option value="daily">Daily</option>
+					<option value="sports">sports</option>
+					<option value="mountain">Mountain Roads</option>
+				</select>
+				<br><br>
+				<p><strong>Enter your preferred Transmission</strong></p>
+				<select id="Transmission">
+					<option value="manual">Manual</option>
+					<option value="auto">Automatic</option>
+				</select>
+				<br><br>
+				<button onclick="recommendCar()">Find My Car</button>
+				<h3 id="result"></h3>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<h2 style="color: white;">Dinith Hansana Fernando 25229523</h2>
+		</div>
+	</div>
+	<script>
+	document.getElementById("welcome").innerHTML= "Welcome to My Website!!!!(added with jss)";
+	function recommendCar(){
+		let budget = document.getElementById("budget").value;
+		let style = document.getElementById("style").value;
+		let transmission = document.getElementById("Transmission").value;
+		
+		let result = "";
+		
+		if(budget=="low"){
+			if(style=="daily"){
+				if(transmission=="auto"){
+					result="Subaru Legacy GT";
+				}
+				else{
+					result="Mazda Rx-8";
+				}
+			}
+			else if(style=="sports"){
+				if(transmission=="auto"){
+					result="Toyota Celica";
+				}
+				else{
+					result="Honda Integra DC5";
+				}	
+			}
+			else if(style=="mountain"){
+				if(transmission=="auto"){
+					result="Mazda Roadster (NC Generation)";
+				}
+				else{
+					result="Mazda Roadster";
+				}
+			}
+		}
+		else if(budget=="mid"){
+			if(style=="daily"){
+				if(transmission=="auto"){
+					result="Toyota Aristo";
+				}
+				else{
+					result="Toyota Chaser";
+				}
+			}
+			else if(style=="sports"){
+				if(transmission=="auto"){
+					result="Nissan Silvia (S15 Spec-S)";
+				}
+				else{
+					result="Nissan Silvia";
+				}
+			}
+			else if(style=="mountain"){
+				if(transmission=="auto"){
+					result="Subaru Legacy B4";
+				}
+				else{
+					result="Subaru Impreza WRX STi";
+				}
+			}
+		}
+		else if(budget=="high"){
+			if(style=="daily"){
+				if(transmission=="auto"){
+					result="Toyota Century";
+				}
+				else{
+					result="Honda NSX";
+				}
+			}
+			else if(style=="sports"){
+				if(transmission=="auto"){
+					result="Nissan GT-R (R35)";
+				}
+				else{
+					result="Toyota Supra RZ";
+				}
+			}
+			else if(style=="mountain"){
+				if(transmission=="auto"){
+					result="Nissan GT-R (R35)";
+				}
+				else{
+					result=`
+						<p>Nissan skyline GT-R</p>
+						<img src="images/blue skyline 70s.jpeg" width="300">
+					`;
+				}
+			}
+		}	
+		document.getElementById("result").innerHTML=result;
+	}
+				
+	</script>
+</body>
+</html>
